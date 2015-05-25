@@ -1,0 +1,30 @@
+package data;
+
+import static helpers.Artist.*;
+
+import org.lwjgl.opengl.Display;
+import org.newdawn.slick.opengl.Texture;
+
+public class Boot {
+
+	public Boot() {
+
+		BeginSession();
+
+		TileGrid grid = new TileGrid();
+		while (!Display.isCloseRequested()) {
+
+			grid.Draw();
+
+			Display.update();
+			Display.sync(60);
+		}
+
+		Display.destroy();
+	}
+
+	public static void main(String[] args) {
+		new Boot();
+	}
+
+}
